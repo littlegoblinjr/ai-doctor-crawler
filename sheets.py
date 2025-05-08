@@ -12,7 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 import lmstudio as lms
 # Configuration
-SHEET_ID = "16wgmEU6DmE8FT-Zun17Nm2ZoFOzl5Dlc-E992C0K6CM"
+SHEET_ID = "" #upload your google sheets id
 WORKSHEET_NAME = "Sheet1"
 CREDS_FILE = "credentials.json"
 OUTPUT_JSON = "scraped_data.json"
@@ -68,7 +68,7 @@ class DataScraper:
         title = practo_mapping.get(specialist.lower())
         if not title:
             return None
-        return f"https://www.practo.com/{city}/{title}"
+        return f"https://www.practo.com/{title}"
 
     async def scrape_specialist(self, specialist: str) -> Dict:
         """Scrape data for a single specialist from all sources."""
